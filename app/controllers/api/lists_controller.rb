@@ -4,7 +4,7 @@ module Api::V1
 
     # GET /lists
     def index
-      @lists = List.all
+      @lists = List.order(:id)
 
       render json: @lists
     end
@@ -27,12 +27,13 @@ module Api::V1
 
     # PATCH/PUT /lists/1
     def update
-         if @list.update(list_params)
-            render json: @list
-         else
-            render json: @list.errors, status: :unprocessable_entity
-         end
+      if @list.update(list_params)
+        render json: @list
+      else
+        render json: @list.errors, status: :unprocessable_entity
+      end
     end
+
     # DELETE /lists/1
     def destroy
       @list.destroy

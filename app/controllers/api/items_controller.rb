@@ -4,7 +4,7 @@ module Api::V1
 
     # GET /items
     def index
-      @items = Item.all
+      @items = Item.order(:id)
 
       render json: @items
     end
@@ -19,7 +19,7 @@ module Api::V1
       @item = Item.new(item_params)
 
       if @item.save
-        render json: @item, status: :created, location: @item
+        render json: @item, status: :created
       else
         render json: @item.errors, status: :unprocessable_entity
       end
@@ -37,6 +37,10 @@ module Api::V1
     # DELETE /items/1
     def destroy
       @item.destroy
+      if @item.destroy
+        head :no_content, status: :ok
+      else
+        render json: @list.errors, status: :unprocessable_entity
     end
 
     private

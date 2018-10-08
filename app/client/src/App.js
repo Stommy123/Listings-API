@@ -1,14 +1,14 @@
-
 import React, { Component } from 'react';
-import ListsContainer from './components/ListsContainer';
+import ListsContainer from './components/ListsContainer'
+
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Vacations</h1>
-        </header>
+          <h1 className="App-title">My vacations!</h1>
+        </header><hr/><br/>
         <ListsContainer />
       </div>
     );
