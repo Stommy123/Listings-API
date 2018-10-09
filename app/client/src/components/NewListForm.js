@@ -25,38 +25,19 @@ const NewListForm = ({ onNewList = f => f }) => {
         >
           <Grid container spacing={24}>
             <Grid item md={8} xs={12}>
-              <Input
-                ref={Input => title = Input}
+              <input ref={input => title = input}
                 type="text"
-                placeholder="Title..." required
-                fullWidth
-                />
-              </Grid>
-              <Grid item md={4} xs={12}>
-                <Input
-                  ref={Input => excerpt = Input}
-                  type="text"
-                  placeholder="Excerpt..." required
-                  fullWidth
-                  />
-              </Grid>
+                placeholder="Title..." required />
             </Grid>
-            <Button
-              variant="contained"
-              color="primary"
-              onSubmit={submit}
-            >
-            Add Vacation
-            </Button>
-            <input ref={input => title = input}
-                   type="text"
-                   placeholder="Title..." required />
-            <input ref={input => excerpt = input}
-                   type="text"
-                   placeholder="Excerpt..." required />
-            <button>Add List</button>
-      </form>
-    </Paper>
+            <Grid item md={4} xs={12}>
+              <input ref={input => excerpt = input}
+                type="text"
+                placeholder="Excerpt..." required />
+            </Grid>
+          </Grid>
+          <button>Add List</button>
+        </form>
+      </Paper>
   )
 }
 
