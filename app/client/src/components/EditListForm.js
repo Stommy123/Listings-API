@@ -19,6 +19,7 @@ export default class EditListForm extends Component {
   handleSubmit(e) {
     e.preventDefault();
     const { id, title, excerpt } = this.state;
+    this.props.editList(id, title, excerpt)
   }
 
   render() {
