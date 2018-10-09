@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import Paper from '@material-ui/core/Paper';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
 
 export default class EditListForm extends Component {
   constructor(props) {
@@ -24,21 +28,29 @@ export default class EditListForm extends Component {
 
   render() {
     return(
-      <form onSubmit={this.handleSubmit}>
-        <input name="title"
-               type="text"
-               placeholder="Title..."
-               value={this.state.title}
-               onChange={this.handleChange}
-        />
-        <input name="excerpt"
-               type="text"
-               placeholder="Excerpt..."
-               value={this.state.excerpt}
-               onChange={this.handleChange}
-        />
-        <button>Update List </button>
-      </form>
+      <Paper style={{margin: 10, padding: 10}}>
+        <form onSubmit={this.handleSubmit}>
+          <Grid container spacing={24}>
+            <Grid item md={8} xs={12}>
+              <input name="title"
+                type="text"
+                placeholder="Title..."
+                value={this.state.title}
+                onChange={this.handleChange}
+                />
+            </Grid>
+            <Grid item md={4} xs={12}>
+              <input name="excerpt"
+                type="text"
+                placeholder="Excerpt..."
+                value={this.state.excerpt}
+                onChange={this.handleChange}
+                />
+            </Grid>
+          </Grid>
+          <button>Update List </button>
+        </form>
+      </Paper>
     )
   }
 
