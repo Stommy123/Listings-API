@@ -1,9 +1,8 @@
-# README
-
-React Front-End with Rails API
+## Listings API 
 * Foreman / HTTP-Proxy-Middleware
 * MVC Architecture 
 * Higher-Order Components
 * API Dashboard
-* React and Rails 
+* React Frontend
+* Rails API Backend
 * ...
